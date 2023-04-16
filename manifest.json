@@ -1,0 +1,24 @@
+{
+  "name": "Hoodwink",
+  "version": "1.0",
+  "description": "Have I visited this page before?",
+  "permissions": ["history", "tabs"],
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Browser History Tracker",
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["popup.js"]
+    }
+  ],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
